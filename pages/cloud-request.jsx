@@ -1,27 +1,35 @@
 import React from "react";
+import { useState } from "react";
 import { AiOutlineReload } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
+import Backdrop from "../components/Backdrop";
+import CloudRequestModal from "../components/CloudRequestModal";
 
 const CloudRequestPage = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div>
       <div className='bg-white py-8 w-full'></div>
       <div className='bg-primary w-4/5 mx-auto my-10'>
         <div className='bg-white shadow-md rounded-lg w-full py-2.5 px-3 flex justify-start items-start gap-3'>
-          <h3 className='text-xl font-semibold'>Cloud Request</h3>
-          <AiOutlineReload className='font-bolder text-xl mt-[6px] text-gray-500' />
+          <h3 className='text-lg font-semibold'>Cloud Request</h3>
+          <span className='w-8 h-8 flex justify-center items-center bg-primary rounded-full'>
+            <AiOutlineReload className='font-bolder text-xl text-gray-500' />
+          </span>
         </div>
-        <div className='flex justify-center items-center gap-3 mt-5 '>
+        <div className='flex justify-center items-center gap-3 mt-3'>
           <div className='w-1/4 bg-white p-3 rounded min-h-[75vh] shadow-lg'>
             <div className='relative'>
               <input
                 className='py-3 px-2 w-60 text-xs text-gray-800 bg-primary rounded outline-none'
                 type='text'
                 name='email'
-                placeholder='Password'
+                placeholder='Search'
               />
               <BiSearch className='absolute text-gray-500 right-12 top-3 cursor-pointer' />
-              <span className='absolute top-3 right-0 cursor-pointer'>
+              <span
+                className='absolute top-3 right-0 cursor-pointer'
+                onClick={() => setShowModal(true)}>
                 <svg
                   width='20'
                   height='20'
@@ -48,6 +56,11 @@ const CloudRequestPage = () => {
           </div>
         </div>
       </div>
+      {showModal && (
+        <Backdrop setShowModal={setShowModal}>
+          <CloudRequestModal />
+        </Backdrop>
+      )}
     </div>
   );
 };

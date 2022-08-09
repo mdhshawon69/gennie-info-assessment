@@ -12,6 +12,7 @@ module.exports = {
 
       colors: {
         primary: "#F8F8F8",
+        backdrop: "rgba(0, 0, 0, 0.6)",
       },
     },
   },
