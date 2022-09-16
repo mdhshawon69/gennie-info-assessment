@@ -1,10 +1,13 @@
 import React from "react";
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { uiActions } from "../../store/uiSlice";
 
-const Backdrop = ({ children, setShowModal }) => {
+const Backdrop = ({ children }) => {
+  const dispatch = useDispatch();
+
   const handleShowModal = (e) => {
     if (e.target.id === "backdrop") {
-      setShowModal(false);
+      dispatch(uiActions.toggleCreateModal());
     }
   };
   return (
