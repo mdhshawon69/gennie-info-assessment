@@ -10,7 +10,7 @@ const Home = () => {
   const [data, setData] = useState([]); // State for storing fatched data from the API
 
   useEffect(() => {
-    fetch("http://task.atiar.info/api/todo") //Fetching the data from the API with the useEffect hook and fetch api.
+    fetch("https://task.atiar.info/api/todo") //Fetching the data from the API with the useEffect hook and fetch api.
       .then((res) => res.json())
       .then((data) => setData(data.data));
   }, []);
