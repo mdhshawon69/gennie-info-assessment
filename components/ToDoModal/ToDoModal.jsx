@@ -38,7 +38,7 @@ const ToDoModal = () => {
       end_time: endTimeRef.current.value,
     };
 
-    fetch("http://task.atiar.info/api/todo/create", {
+    fetch("https://task.atiar.info/api/todo/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -47,8 +47,6 @@ const ToDoModal = () => {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
-
-    axios.post("http://task.atiar.info/api/todo/create", todo);
   };
 
   return (
