@@ -120,9 +120,7 @@ const ToDoModal = () => {
               />
             </div>
 
-            <button
-              type='submit'
-              className='text-white py-2.5 px-5 w-40 bg-[#007BEC] mx-auto block rounded-lg text-sm'>
+            <button className='text-white py-2.5 px-5 w-40 bg-[#007BEC] mx-auto block rounded-lg text-sm'>
               Add
             </button>
           </form>
