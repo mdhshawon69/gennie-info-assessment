@@ -19,8 +19,8 @@ const ToDoList = ({ data }) => {
         </button>
       </div>
 
-      {data.map((item) => (
-        <ToDoItem todo={item} />
+      {data.map((item, i) => (
+        <ToDoItem key={i} todo={item} />
       ))}
     </div>
   );
